@@ -1,0 +1,80 @@
+{
+    // Easier to go through VsDevCmd than to hack PATH
+    "terminal.integrated.shell.windows": "cmd.exe",
+    "terminal.integrated.env.windows": {
+        "VsDevCmd": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\""
+    },
+    "terminal.integrated.shellArgs.windows": [
+        "/k",
+        "%VsDevCmd%",
+        "&&",
+        // CMD _sucks_, drop into PS immediately
+        "powershell.exe"
+    ],
+    "terminal.integrated.profiles.windows": {
+        // Other profiles that should probably be present for Reasons TM
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Visual Studio Developer Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [
+                "/k",
+                // Easier to go through vcvars64 than to hack PATH
+                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+                "&&",
+                // CMD _sucks_, drop into PS immediately
+                "powershell.exe"
+            ],
+            "icon": "terminal-powershell",
+        },
+    },
+    // User-level only... Just delete when you're done with the course.
+    "terminal.integrated.defaultProfile.windows": "Visual Studio Developer Prompt",
+    "files.associations": {
+        "body.h": "c",
+        "sdl_wrapper.h": "c",
+        "scene.h": "c",
+        "color.h": "c",
+        "list.h": "c",
+        "forces.h": "c",
+        "collision.h": "c",
+        "force_creator.h": "c",
+        "math.h": "c",
+        "test_util.h": "c",
+        "stdbool.h": "c",
+        "random": "c",
+        "game_weapon.h": "c",
+        "pacman_multiplayer_test.h": "c",
+        "map.h": "c",
+        "gravity.h": "c",
+        "player.h": "c",
+        "game.h": "c",
+        "assert.h": "c",
+        "vector.h": "c",
+        "array": "c",
+        "functional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "stdlib.h": "c",
+        "sprites.h": "c",
+        "sdl_image.h": "c",
+        "stddef.h": "c",
+        "sdl.h": "c"
+    }
+}
